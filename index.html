@@ -26,17 +26,23 @@
     <header class="jumbotron">
       <h1 class="display-3">Work Day Scheduler</h1>
       <p class="lead">A simple calendar app for scheduling your work day</p>
+      <!--Current day shown here-->
       <p id="currentDay" class="lead"></p>
     </header>
-    <!--drop down menu to choose time format, choose 24hrs or 12hrs-->
+    
     <div class="container">
-        
+        <div class="mb-3">Toggle To Change Time Format</div>
+        <!--Switch to choose time format, choose 24hrs or 12hrs-->
+        <div class="custom-control custom-switch">
+            <input type="checkbox" class="custom-control-input" id="customSwitch1">
+            <label class="custom-control-label" for="customSwitch1">12 hrs</label>
+        </div>
     </div>
     <div class="container time-block">
       <!-- Timeblocks go here -->
         <div class="row">
             <div class="col">
-                <div class="hour"></div>
+                <div class="hour">sdsds</div>
             </div>
             <div class="col">
                 <textarea class="description"></textarea>

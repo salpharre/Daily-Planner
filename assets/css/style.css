@@ -5,7 +5,7 @@ body {
   }
   
   textarea{
-    background: transparent;
+    background: burlywood;
     border: none;
     resize: none;
     color: #000000;
@@ -38,6 +38,7 @@ body {
   
   .hour {
     background-color: #ffffff;
+    background: grey;
     color: #000000;
     border-top: 1px dashed #000000;
   }
