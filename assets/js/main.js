@@ -16,17 +16,10 @@ console.log(parseTodayPlanner);
 
 var todayPlanner =[];
 
-var amPm = [moment("hh"), "1 am", "2 am", "3 am", "4 am", "5 am", "6 am", "7 am", "8 am", "9 am", "10 am", "11 am", "12 pm", "1 pm", "2 pm", "3 pm", "4 pm", "5 pm", "6 pm", "7 pm", "8 pm", "9 pm", "10 pm", "11 pm"];
+var amPm = ["12 am", "1 am", "2 am", "3 am", "4 am", "5 am", "6 am", "7 am", "8 am", "9 am", "10 am", "11 am", "12 pm", "1 pm", "2 pm", "3 pm", "4 pm", "5 pm", "6 pm", "7 pm", "8 pm", "9 pm", "10 pm", "11 pm"];
 
 //for a future feature, toggling between am/pm and 24hr time format
 // var twentyFour = ["00:00", "01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07:00", "08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00", "24:00"];
-
-//initilize moment using LL format of date
-var dateMoment = moment().format("LL");
-
-var fromNowPast = moment().startOf("day").fromNow()
-var fromNowFuture = moment().endOf("day").fromNow()
-
 
 
 /*populate empty array todayPlanner with strings from the the amPm array
@@ -38,7 +31,7 @@ function populateObject(){
     var hourToPlanner = {hour: amPm[i], text: ""};
 
     todayPlanner.push(hourToPlanner);
-    console.log(todayPlanner);
+    //console.log(todayPlanner);
 
    
 }
@@ -70,7 +63,7 @@ function saveText(){
     saveButton.addEventListener("click", function(event){
         event.preventDefault();
 
-        //populateObjectWithText();   
+       // populateObjectWithText();   
 
     });
     
@@ -83,11 +76,11 @@ function saveText(){
 //saveText();
 // console.log(todayDate);
 
-
+//initilize moment using LL format of date
 //grab id of div where date will go
 //print the moment onto webpage
 
-
+var dateMoment = moment().format("LL");
 
 var todaysDate = document.getElementById("currentDay");
 
@@ -95,24 +88,37 @@ todaysDate.innerHTML = dateMoment;
 
 //use moment for color-changing
 
+var fromNowPast = moment().startOf("day").fromNow()
+var fromNowFuture = moment().endOf("day").fromNow()
 
+var hourMoment = moment().format("h");
+
+var momentAmPm = [];
+
+//won't work because it'll replace every string with the same hour
+// function changeHour(){
+// for (var i = 0; i < amPm.length; i++){
+//     var replaceHour = amPm[i].replace(amPm[i], hourMoment);
+//     momentAmPm.push(replaceHour);
+// }
+// }console.log(momentAmPm);
 
 function movingColors(){
     
-    for (var i = 0; todayPlanner.length; i++){
+    for (var i = 0; i < momentAmPm.length; i++){
 
-        if (todayPlanner[i].hour === fromNowPast){
+        if (i === fromNowPast){
             textareaE1.setAttribute("style", "background: grey")
         }
-        else if (todayPlanner[i].hour === fromNowFuture){
+        else if (i === fromNowFuture){
             textareaE1.setattribute("style", "background: blue")
         }
-        else if (todayPlanner[i].hour !== fromNowPast && todayPlanner[i].hour !== fromNowFuture){
+        else if (i !== fromNowPast && i !== fromNowFuture){
             textareaE1.setattribute("style", "background: yellow")
         } 
     }
 }
-
+movingColors();
 
 
 
