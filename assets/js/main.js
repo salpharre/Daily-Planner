@@ -38,14 +38,18 @@ populateObject();
 
 //trying to change the text value of each object in the array
 //console.log comes back with undefined for text: key
+//it's undefined because since there's no value when "" is being replaced it is undefined
 function populateObjectWithText(){
     for (var i = 0; i < todayPlanner.length; i++){
 
         var textValue = document.querySelectorAll(".description").value;
-        
-        todayPlanner[i].text = textValue;
 
-        
+        var characters = "abcdefghijklmnopqrstuvwxyz0123456789".split();
+
+        if (textValue === characters){
+
+            todayPlanner[i].text = textValue;
+        }
 
         console.log(todayPlanner);
     }
