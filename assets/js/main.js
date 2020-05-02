@@ -1,10 +1,16 @@
 var hourSwitcher = document.querySelector("#customSwitch1");
 var hourDiv = document.querySelectorAll(".hour");
 var saveButton = document.querySelector(".saveBtn");
+var textArea = document.querySelectorAll(".description");
+var textareaE1 = document.querySelectorAll("textarea");
 
 // let body = document.getElementsByTagName("body")[0];
 
 // var comeBackDate = localStorage.getItem("hour");
+
+//retrieve info from local storage
+//var parseTodayPlanner = JSON.parse(localStorage.getItem("text"));
+//console.log(parseTodayPlanner);
 
 var todayPlanner =[];
 
@@ -13,8 +19,9 @@ var amPm = ["12 am", "1 am", "2 am", "3 am", "4 am", "5 am", "6 am", "7 am", "8 
 // var twentyFour = ["00:00", "01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07:00", "08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00", "24:00"];
 
 
-//Click Event for Save Button
 
+/*populate empty array todayPlanner with strings from the the amPm array
+to create an object for every timeblock*/
 function populateObject(){
 
    for (var i = 0; i < amPm.length; i++){
@@ -22,37 +29,45 @@ function populateObject(){
     var hourToPlanner = {hour: amPm[i], text: ""};
 
     todayPlanner.push(hourToPlanner);
-    console.log(todayPlanner);
+    //console.log(todayPlanner);
 
-   // })
+   
 }
 }
 populateObject();
 
 //trying to change the text value of each object in the array
+//console.log comes back with undefined for text: key
 function populateObjectWithText(){
     for (var i = 0; i < todayPlanner.length; i++){
 
         var textValue = document.querySelectorAll(".description").value;
-
+        
         todayPlanner[i].text = textValue;
+
+        
+
         console.log(todayPlanner);
     }
 }
+populateObjectWithText();
 
-
-
+//Click Event for Save Button
 function saveText(){
     saveButton.addEventListener("click", function(event){
         event.preventDefault();
 
-        populateObjectWithText();
-
-        //stringify and send to local storage
+        //populateObjectWithText();   
 
     });
     
+     //stringify and send to local storage
+     var stringifyTodayPlanner = JSON.stringify(todayPlanner);
+        
+     localStorage.setItem("text", stringifyTodayPlanner);
+     //console.log(localStorage);
 }
+saveText();
 // console.log(todayDate);
 
 
