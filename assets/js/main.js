@@ -1,51 +1,57 @@
 
-
+//grabs id of future switch
+//grabs all textarea elements to create a nodelist, that is later used in a for loop to associate moment() with textarea
 
 var hourSwitcher = document.querySelector("#customSwitch1");
-var hourDiv = document.querySelectorAll(".hour");
-var saveButton = document.querySelector(".saveBtn");
-var textArea = document.querySelectorAll(".description");
 var textareaE1 = document.querySelectorAll("textarea");
 
 
-//located here so the date is updated first
+//Function for displaying current day in header of html is called at top of script so it loads first
 currentDay();
 
 
+//for loop that loops through localStorage object to retrieve user input that was saved in local Storage when the save button was clicked
 
+/*Instead of calling on all 24 key:value pairs for each textarea, a # (refers to id located on textarea elements) and i (i=integer) and textarea class are concatenated. 
+They represent the jQuery selector the localStorage is targeting to deposit stored input. "hour" and i are also concantenated 
+to represent the key localStorage is refrencing in order to retrieve connected input*/
 for (var i = 0; i < localStorage.length; i++){
     $("#" + [i] + ".description").val(localStorage.getItem("hour" + [i]));
 }
 
-console.log(localStorage)
 
 
 //for a future feature, toggling between am/pm and 24hr time format
 // var twentyFour = ["00:00", "01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07:00", "08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00", "24:00"];
 
 
-
+/*jQuery selector, targeting class of saveBtn. This is a click event for saving inputted text in textarea element to localStorage */
 $(".saveBtn").on("click", function(event){
 
+    //prevents normal function of browser, so it won't refresh before input is stored in localStorage
     event.preventDefault();
 
-    console.log("click");
-    var note = $(this).siblings(".description").val();//textarea tag is a sibling to the button tag
-    var idNote = $(this).parent().attr("id");//id of row, row is a parent to button and textarea
     
+    /*creates a variable to target the sibling of the button that has the class of saveBtn, 
+    the sibling is textarea element with the class of description. It grabs the value of the textarea element*/
+    var note = $(this).siblings(".description").val();
 
+    /*creates variable to target id attribute of parent element to save button and text area element*/
+    var idNote = $(this).parent().attr("id");
+    
+    //creates varaible to key for key:value pair in localStorage. 
     var hour = "hour" + idNote;
 
     
-   
+ //sets key of var hour, and var note (value) as a key:value pair to save to localStorage. The hour key is what is referred to in localStorage.getItem()
  localStorage.setItem(hour, note);
 
 });
 
 
-//initilize moment using LL format of date
-//grab id of div where date will go
-//print the moment onto webpage
+//initilize moment using LL format of date, LL element looks like this: May 2 2020
+//grab id of div where date will appear
+//print the moment, the current date parsed, onto webpage
 function currentDay(){
 
 var dateMoment = moment().format("LL");
@@ -55,9 +61,16 @@ var todaysDate = document.getElementById("currentDay");
 todaysDate.innerHTML = dateMoment;
 }
 
-//use moment for color-changing
+
+/*parse moment and set to a variable. hour() refers to the hours in a day*/
 
 var currentHour = moment().hour();
+
+/*function with a loop that loops through the nodelist of textareaE1, that is a variable that grabbed all textarea tags.
+nodelist of textareaE1 is grabbing the ids of each textarea element, the ids are a series of strings, this must be parsed 
+into an integer in order to compare against the moment()(which is an integer). If the integer id matches the current hour (moment())
+then the textarea background color will change to a specific color, represeting the preset. If the integer id is greater then the 
+current hour then it a different color, representing the future. Else the color will change to represent the past*/
 
 function movingColors(){
 
@@ -77,5 +90,5 @@ function movingColors(){
 }
 }
 movingColors();
-
+//functino is called
 
