@@ -1,53 +1,49 @@
-  body {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 16px;
-    line-height: 1;
+  body {/*Targets body tag, entire webpage*/
+    font-family: 'Open Sans', sans-serif;/*Provides two font options for entire page, 'Open Sans' is from an external library, google fonts*/
+    font-size: 16px; /*Default font size of browser*/
+    line-height: 1; /*Sets spacing between lines*/
   }
   
-  textarea{
-    background: burlywood;
-    border: none;
-    resize: none;
-    color: #000000;
-    border-left: 1px solid black;
-    padding: 10px;
+  textarea{ /*targets all textarea elements*/
+    border: none; /*no border*/
+    resize: none; /*no change in height or width of element*/
+    color: #000000; /*text color*/
+    border-left: 1px solid black; /*size, style(dashed, solid, etc), color of left border*/
+    padding: 10px; /*padding to ensure text doesn't crowd the edges of container*/
+    white-space: pre-wrap; /*ensures inputed text is a block*/
   }
   
-  .jumbotron {
-    text-align: center;
-    background-color: transparent;
-    color: black;
-    border-radius: 0;
-    border-bottom: 10px solid black;
+  .jumbotron { /*targets the class of jumbotron, the header*/
+    text-align: center; /*center text*/
+    background-color: transparent; /*no background color*/
+    color: black; /*text color*/
+    border-radius: 0; /*no rounded corners*/
+    border-bottom: 10px solid black; /*size, style, color of bottom border*/
   }
   
-  .description{
+  .time-block{ /*targets class of time-block, the container that holds all timeblocks*/
+    text-align: center; /*centers all rows*/
+    border-radius: 15px; /*rounds corners of container and therefore the individual timeblocks*/
+  }
+  
+  .flex-row { /*targets all rows*/
     white-space: pre-wrap;
+    height: 80px; /*sets height of row*/
+    border-top: 1px solid white; 
   }
   
-  .time-block{
-    text-align: center;
-    border-radius: 15px;
+  .hour { /*targets all divs with a class of hour, the div that holds the hour text*/
+    background-color: #ffffff; 
+    color: #000000; 
+    border-top: 1px dashed #000000; 
   }
   
-  .flex-row {
-    white-space: pre-wrap;
-    height: 80px;
-    border-top: 1px solid white;;
-  }
-  
-  .hour {
-    background-color: #ffffff;   
-    color: #000000;
-    border-top: 1px dashed #000000;
-  }
-  
-  .saveBtn {
-    border-left: 1px solid black;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    background-color: #06AED5;
-    color: white;
+  .saveBtn { /*targets all buttons*/
+    border-left: 1px solid black; 
+    border-top-right-radius: 15px; /*sets rounded corners for top and right of button element*/
+    border-bottom-right-radius: 15px; /*sets rounded corners for bottom and right of button element*/
+    background-color: #06AED5; 
+    color: white; 
   }
   
   
