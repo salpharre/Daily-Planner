@@ -14,7 +14,9 @@ Daily planner created using Bootstrap and moment.js
 
 ### General Info
 
+A daily scheduler to save events or todos. Type in what the event in the empty text area and push `Save`. Closed the tab by accident? Don't worry, as long as you clicked `Save`, your todos will still be there when you re-open the page! Want to delete something? Make sure to hit `Save`!
 
+Timeblocks are color-coded to reflect whether the event is current, past or future. This feature was achieved using moment.js.
 
 #### Technology
 
@@ -36,4 +38,4 @@ https://salpharre.github.io/Daily-Planner/
 
 * A switch to switch between am/pm and 24 hr format
 
-* A drop down menu to choose a date
+* A drop down menu to choose a calendar date
