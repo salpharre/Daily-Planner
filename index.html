@@ -11,31 +11,33 @@
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     />
 
-    <!---->
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-      crossorigin="anonymous"
-    />
+    <!--Link to google fonts to use font Open Sans for the entire page-->
     <link
       href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
       rel="stylesheet"
     />
+
+    <!--Link to external stylesheet, provide extra styling outside of Bootstrap to page-->
     <link rel="stylesheet" href="./assets/css/style.css" />
-    <title>Work Day Scheduler</title>
+    <title>Day Planner</title>
   </head>
 
   <body>
+
+    <!--Jumbotron container used from Bootstrap, used as a header to hold the Title of the page, 
+      a small introduction and the current calendar day parsed from moment.js-->
     <header class="jumbotron">
-      <h1 class="display-3">Work Day Scheduler</h1>
-      <p class="lead">A simple calendar app for scheduling your work day</p>
-      <!--Current day shown here-->
+      <h1 class="display-3">Day Planner</h1>
+      <p class="lead">A simple calendar app for scheduling day</p>
+
+      <!--Current day shown here, using moment.js to parse the exact date-->
       <p id="currentDay" class="lead"></p>
     </header>
     
+    <!--Bootstrap container a toggle switch that will appear in a future update-->
     <div class="container">
         <div class="mb-3">Toggle To Change Time Format</div>
+
         <!--Switch to choose time format, choose 24hrs or 12hrs-->
         <!--Switch does not currently work, will be added in a future update-->
         <div class="custom-control custom-switch">
@@ -43,11 +45,28 @@
             <label class="custom-control-label" for="customSwitch1">12 hrs</label>
         </div>
     </div>
+    
+    <!--Bootstrap container holding all 24 time blocks for the day, container has spacing styling mt-3, 
+      referring to margin-top which provides more spacing between the container and the switch-->
     <div class="container time-block mt-3">
-      <!-- Timeblocks go here -->
+
+      <!--Listed comments for first row is the same for all rows-->
+
+
+      <!--Bootstrap row that wraps around three elements, div that holds the time, 
+        textarea where the user can enter events, and a button to save entries to localStorage-->
+      <!--Has a Bootstrap styling of flex to make the three children elements run in a horizontal direction-->
+      <!--Bootstrap syling of justify-content-center ensures entire row is centered on page-->
         <div class="d-flex flex-row justify-content-center" id="0">
+
+            <!--Column is utilizing Bootstrap grid to shrink size of space it's taking up in row, to make more room for textarea tag-->
+            <!--Bootstrap styling p-2 changes padding to move the text in div further down, so it doesn't hug the top dotted line-->
             <div class="col-2 p-2 hour">12 am</div>
+
+            <!--Bootstrap styling flex-fill ensures the textarea is at it's widest-->
             <textarea class="p-2 flex-fill description" id="0"></textarea>
+
+            <!--Has Bootstrap class of btn to ensure this element is treated as a button under Bootstrap-->
             <button class="col-2 btn p-2 flex-fill saveBtn" type="button">Save</button>
         </div>
         <div class="d-flex flex-row justify-content-center" id="1">
@@ -170,6 +189,9 @@
 
     </div>
 
+    <!--Link to jQuery so that we may utilize the syntax alloted.--> 
+    <!--Moment.js library is linked to use it as a wrapper to the JavaScript Date object.-->
+    <!--Link to exeternal script to manipulate the HTML-->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="assets/js/main.js"></script>
