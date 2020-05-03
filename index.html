@@ -33,6 +33,7 @@
     <div class="container">
         <div class="mb-3">Toggle To Change Time Format</div>
         <!--Switch to choose time format, choose 24hrs or 12hrs-->
+        <!--Switch does not currently work, will be added in a future update-->
         <div class="custom-control custom-switch">
             <input type="checkbox" class="custom-control-input amPm" id="customSwitch1">
             <label class="custom-control-label" for="customSwitch1">12 hrs</label>
@@ -40,130 +41,128 @@
     </div>
     <div class="container time-block mt-3">
       <!-- Timeblocks go here -->
-        <div class="d-flex flex-row justify-content-center" id="0"><!--add ids for rest of rows-->
-            <div class="col-2 p-2 hour" data-format="amPm">12 am</div>
-            <textarea class="p-2 flex-fill description" id="0"></textarea><!--change rest of ids to 1-24-->
+        <div class="d-flex flex-row justify-content-center" id="0">
+            <div class="col-2 p-2 hour">12 am</div>
+            <textarea class="p-2 flex-fill description" id="0"></textarea>
             <button class="col-2 btn p-2 flex-fill saveBtn" type="button">Save</button>
         </div>
         <div class="d-flex flex-row justify-content-center" id="1">
-            <div class="col-2 p-2 hour" data-format="amPm">1 am</div>
+            <div class="col-2 p-2 hour">1 am</div>
             <textarea class="p-2 flex-fill description" id="1"></textarea>
             <button class="col-2 p-2 flex-fill saveBtn" type="button">Save</button>
         </div>
-        <div class="d-flex flex-row justify-content-center">
-          <div class="col-2 p-2 hour" data-format="amPm">2 am</div>
+        <div class="d-flex flex-row justify-content-center" id="2">
+          <div class="col-2 p-2 hour">2 am</div>
           <textarea class="p-2 flex-fill description" id="2"></textarea>
           <button class="col-2 p-2 flex-fill saveBtn" type="button">Save</button>
         </div>
-        <div class="d-flex flex-row justify-content-center">
-          <div class="col-2 p-2 hour" data-format="amPm">3 am</div>
+        <div class="d-flex flex-row justify-content-center" id="3">
+          <div class="col-2 p-2 hour">3 am</div>
           <textarea class="p-2 flex-fill description" id="3"></textarea>
           <button class="col-2 p-2 flex-fill saveBtn" type="button">Save</button>
         </div>
-        <div class="d-flex flex-row justify-content-center">
-          <div class="col-2 p-2 hour" data-format="amPm">4 am</div>
+        <div class="d-flex flex-row justify-content-center" id="4">
+          <div class="col-2 p-2 hour">4 am</div>
           <textarea class="p-2 flex-fill description" id="4"></textarea>
           <button class="col-2 p-2 flex-fill saveBtn" type="button">Save</button>
         </div>
-        <div class="d-flex flex-row justify-content-center">
-          <div class="col-2 p-2 hour" data-format="amPm">5 am</div>
+        <div class="d-flex flex-row justify-content-center" id="5">
+          <div class="col-2 p-2 hour">5 am</div>
           <textarea class="p-2 flex-fill description" id="5"></textarea>
           <button class="col-2 p-2 flex-fill saveBtn" type="buttont">Save</button>
         </div>
-        <div class="d-flex flex-row justify-content-center">
-          <div class="col-2 p-2 hour" data-format="amPm">6 am</div>
+        <div class="d-flex flex-row justify-content-center" id="6">
+          <div class="col-2 p-2 hour">6 am</div>
           <textarea class="p-2 flex-fill description" id="6"></textarea>
           <button class="col-2 p-2 flex-fill saveBtn" type="button">Save</button>
         </div>
-        <div class="d-flex flex-row justify-content-center">
-          <div class="col-2 p-2 hour" data-format="amPm">7 am</div>
+        <div class="d-flex flex-row justify-content-center" id="7">
+          <div class="col-2 p-2 hour">7 am</div>
           <textarea class="p-2 flex-fill description" id="7"></textarea>
           <button class="col-2 p-2 flex-fill saveBtn" type="button">Save</button>
         </div>
-        <div class="d-flex flex-row justify-content-center">
-          <div class="col-2 p-2 hour" data-format="amPm">8 am</div>
+        <div class="d-flex flex-row justify-content-center" id="8">
+          <div class="col-2 p-2 hour">8 am</div>
           <textarea class="p-2 flex-fill description" id="8"></textarea>
           <button class="col-2 p-2 flex-fill saveBtn" type="button">Save</button>
         </div>
-        <div class="d-flex flex-row justify-content-center">
-          <div class="col-2 p-2 hour" data-format="amPm">9 am</div>
+        <div class="d-flex flex-row justify-content-center" id="9">
+          <div class="col-2 p-2 hour">9 am</div>
           <textarea class="p-2 flex-fill description" id="9"></textarea>
           <button class="col-2 p-2 flex-fill saveBtn" type="button">Save</button>
         </div>
-        <div class="d-flex flex-row justify-content-center">
-          <div class="col-2 p-2 hour" data-format="amPm">10 am</div>
+        <div class="d-flex flex-row justify-content-center" id="10">
+          <div class="col-2 p-2 hour">10 am</div>
           <textarea class="p-2 flex-fill description" id="10"></textarea>
           <button class="col-2 p-2 flex-fill saveBtn" type="button">Save</button>
         </div>
-        <div class="d-flex flex-row justify-content-center">
-          <div class="col-2 p-2 hour" data-format="amPm">11 am</div>
+        <div class="d-flex flex-row justify-content-center" id="11">
+          <div class="col-2 p-2 hour">11 am</div>
           <textarea class="p-2 flex-fill description" id="11"></textarea>
           <button class="col-2 p-2 flex-fill saveBtn" type="button">Save</button>
         </div>
-        <div class="d-flex flex-row justify-content-center">
-          <div class="col-2 p-2 hour" data-format="amPm">12 pm</div>
+        <div class="d-flex flex-row justify-content-center" id="12">
+          <div class="col-2 p-2 hour">12 pm</div>
           <textarea class="p-2 flex-fill description" id="12"></textarea>
           <button class="col-2 p-2 flex-fill saveBtn" type="button">Save</button>
         </div>
-        <div class="d-flex flex-row justify-content-center">
-          <div class="col-2 p-2 hour" data-format="amPm">1 pm</div>
+        <div class="d-flex flex-row justify-content-center" id="13">
+          <div class="col-2 p-2 hour">1 pm</div>
           <textarea class="p-2 flex-fill description" id="13"></textarea>
           <button class="col-2 p-2 flex-fill saveBtn" type="button">Save</button>
         </div>
-        <div class="d-flex flex-row justify-content-center">
-          <div class="col-2 p-2 hour" data-format="amPm">2 pm</div>
+        <div class="d-flex flex-row justify-content-center" id="14">
+          <div class="col-2 p-2 hour">2 pm</div>
           <textarea class="p-2 flex-fill description" id="14"></textarea>
           <button class="col-2 p-2 flex-fill saveBtn" type="button">Save</button>
         </div>
-        <div class="d-flex flex-row justify-content-center">
-          <div class="col-2 p-2 hour" data-format="amPm">3 pm</div>
+        <div class="d-flex flex-row justify-content-center" id="15">
+          <div class="col-2 p-2 hour">3 pm</div>
           <textarea class="p-2 flex-fill description" id="15"></textarea>
           <button class="col-2 p-2 flex-fill saveBtn" type="button">Save</button>
         </div>
-        <div class="d-flex flex-row justify-content-center">
-          <div class="col-2 p-2 hour" data-format="amPm">4 pm</div>
+        <div class="d-flex flex-row justify-content-center" id="16">
+          <div class="col-2 p-2 hour">4 pm</div>
           <textarea class="p-2 flex-fill description" id="16"></textarea>
           <button class="col-2 p-2 flex-fill saveBtn" type="button">Save</button>
         </div>
-        <div class="d-flex flex-row justify-content-center">
-          <div class="col-2 p-2 hour" data-format="amPm">5 pm</div>
+        <div class="d-flex flex-row justify-content-center"id="17">
+          <div class="col-2 p-2 hour">5 pm</div>
           <textarea class="p-2 flex-fill description" id="17"></textarea>
           <button class="col-2 p-2 flex-fill saveBtn" type="button">Save</button>
         </div>
-        <div class="d-flex flex-row justify-content-center">
-          <div class="col-2 p-2 hour" data-format="amPm">6 pm</div>
+        <div class="d-flex flex-row justify-content-center" id="18">
+          <div class="col-2 p-2 hour">6 pm</div>
           <textarea class="p-2 flex-fill description" id="18"></textarea>
           <button class="col-2 p-2 flex-fill saveBtn" type="button">Save</button>
         </div>
-        <div class="d-flex flex-row justify-content-center">
-          <div class="col-2 p-2 hour" data-format="amPm">7 pm</div>
+        <div class="d-flex flex-row justify-content-center" id="19">
+          <div class="col-2 p-2 hour">7 pm</div>
           <textarea class="p-2 flex-fill description" id="19"></textarea>
           <button class="col-2 p-2 flex-fill saveBtn" type="button">Save</button>
         </div>
-        <div class="d-flex flex-row justify-content-center">
-          <div class="col-2 p-2 hour" data-format="amPm">8 pm</div>
+        <div class="d-flex flex-row justify-content-center" id="20">
+          <div class="col-2 p-2 hour">8 pm</div>
           <textarea class="p-2 flex-fill description" id="20"></textarea>
           <button class="col-2 p-2 flex-fill saveBtn" type="button">Save</button>
         </div>
-        <div class="d-flex flex-row justify-content-center">
-          <div class="col-2 p-2 hour" data-format="amPm">9 pm</div>
+        <div class="d-flex flex-row justify-content-center" id="21">
+          <div class="col-2 p-2 hour">9 pm</div>
           <textarea class="p-2 flex-fill description" id="21"></textarea>
           <button class="col-2 p-2 flex-fill saveBtn" type="button">Save</button>
         </div>
-        <div class="d-flex flex-row justify-content-center">
-          <div class="col-2 p-2 hour" data-format="amPm">10 pm</div>
+        <div class="d-flex flex-row justify-content-center" id="22">
+          <div class="col-2 p-2 hour">10 pm</div>
           <textarea class="p-2 flex-fill description" id="22"></textarea>
           <button class="col-2 p-2 flex-fill saveBtn" type="button">Save</button>
         </div>
-        <div class="d-flex flex-row justify-content-center">
-          <div class="col-2 p-2 hour" data-format="amPm">11 pm</div>
+        <div class="d-flex flex-row justify-content-center" id="23">
+          <div class="col-2 p-2 hour">11 pm</div>
           <textarea class="p-2 flex-fill description" id="23"></textarea>
           <button class="col-2 p-2 flex-fill saveBtn" type="button">Save</button>
         </div>
         
-
-
-        </div>
+      </div>
 
     </div>
 
