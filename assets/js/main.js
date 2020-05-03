@@ -1,3 +1,6 @@
+
+
+
 var hourSwitcher = document.querySelector("#customSwitch1");
 var hourDiv = document.querySelectorAll(".hour");
 var saveButton = document.querySelector(".saveBtn");
@@ -44,6 +47,7 @@ $(".saveBtn").on("click", function(event){
 //grab id of div where date will go
 //print the moment onto webpage
 function currentDay(){
+
 var dateMoment = moment().format("LL");
 
 var todaysDate = document.getElementById("currentDay");
