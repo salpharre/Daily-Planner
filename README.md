@@ -10,7 +10,7 @@ Daily planner created using Bootstrap and moment.js
 
 * Launch
 
-* [Future Features](https://github.com/salpharre/Daily-Planner#future)
+* Future Features
 
 ### General Info
 
@@ -38,4 +38,4 @@ https://salpharre.github.io/Daily-Planner/
 
 * A switch to switch between am/pm and 24 hr format
 
-* A drop down menu to choose a calendar [date](https://github.com/salpharre/Daily-Planner#L17)
+* A drop down menu to choose a calendar date
